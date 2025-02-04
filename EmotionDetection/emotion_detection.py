@@ -16,10 +16,8 @@ def emotion_detector(text_to_analyse):  # Define a function named sentiment_anal
         max_score = emotionPredictions[max_label]
         emotionPredictions["dominant_emotion"] = max_label
     elif response.status_code == 400:
-        for key, values in emotionPredictions:
-            emotionPredictions[key] = None
-            emotionPredictions[values] = None
-        emotionPredictions["dominant_emotion"] = None
+        emotionPredictions = {'anger':None,"joy":None,"sadness":None,"disgust":None,"fear":None, \
+        "dominant_emotion":None}
     # return {'label': max_label, 'score': max_score}
     return emotionPredictions
     
